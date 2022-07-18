@@ -604,11 +604,10 @@ header {
 		right: 27px;
 		font-size: 80px;
 		z-index: 1;
-		top: 66%;
+		bottom: 2%;
+		top: unset;
 	}
 	.project_item:nth-child(odd) .project_num {
-		top: unset;
-		bottom: 200px;
 		color: black;
 		opacity: 0.1;
 	}
@@ -625,6 +624,11 @@ header {
 	}
 	.project_desc p:nth-of-type(n + 2) {
 		display: none;
+	}
+}
+@media (max-width: 767px) {
+	.project_num {
+		bottom: 15%;
 	}
 }
 
