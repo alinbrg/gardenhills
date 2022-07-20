@@ -957,6 +957,16 @@ header {
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+	.main_article-desc p:nth-of-type(n + 2) {
+		display: none;
+	}
+	.main_article-desc p {
+		display: -webkit-box;
+		-webkit-line-clamp: 7;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
 /* footer styles */
 .footer {
