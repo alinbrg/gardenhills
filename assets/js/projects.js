@@ -20,7 +20,7 @@ function enableSliderOnMob() {
 				slide.classList.add("swiper-slide");
 			});
 
-			swiper = new Swiper(".projects_listing-swiper", {
+			swiper = new Swiper(swiperBlock, {
 				breakpoints: {
 					0: {
 						slidesPerView: 1.4,
