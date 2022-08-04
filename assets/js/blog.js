@@ -91,15 +91,16 @@ function enableBlogSliderOnMob() {
 enableBlogSliderOnMob();
 
 function blogPageTexts() {
-	const mainTitles = document.querySelectorAll(".main_article-title");
-	const titles = document.querySelectorAll(".article-title");
+	const mainTitles = document.querySelectorAll(".main_article .article-title");
+	const titles = document.querySelectorAll(".article .article-title");
 	const articleAllP = document.querySelectorAll(
 		".article-desc p:first-of-type"
 	);
 
-	const articleImg = document.querySelector(".article-img");
+	const articleImg = document.querySelector(".article .article-img");
 	const articleImgHeight = articleImg.getBoundingClientRect().height;
 
+	// console.log(titles, mainTitles);
 	if (window.innerWidth > 1024) {
 		mainTitles.forEach((mainTitle) => {
 			if (mainTitle.innerText.length > 80) {
