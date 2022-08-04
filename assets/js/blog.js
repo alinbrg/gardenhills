@@ -1,3 +1,44 @@
+function renderArticles() {
+	const articles = [...document.querySelectorAll("article")];
+
+	const blogPageContent = document.querySelector(".blog_page-content");
+	for (let i = 0; i < articles.length; i += 4) {
+		// console.log(articles[i], i);
+		if (!articles[i]) return;
+
+		articles[i].classList.remove("article", "d-flex");
+		articles[i].classList.add("blog_page-main-article", "main_article");
+		const blogPageArticlesBlock = document.createElement("div");
+		blogPageArticlesBlock.classList.add(
+			"blog_page-articles",
+			"articles",
+			"d-flex"
+		);
+
+		blogPageArticlesBlock.appendChild(articles[i]);
+
+		const articlesSwiper = document.createElement("div");
+		articlesSwiper.classList.add("articles_list-swiper");
+		const articlesList = document.createElement("div");
+		articlesList.classList.add("articles_list", "blog_page-articles");
+
+		blogPageArticlesBlock.appendChild(articlesSwiper);
+		articlesSwiper.appendChild(articlesList);
+
+		blogPageContent.append(blogPageArticlesBlock);
+		// console.log(blogPageArticlesBlock);
+
+		for (let j = i + 1; j < i + 4; j++) {
+			// console.log(articles[j], j);
+			if (!articles[j]) return;
+
+			articlesList.appendChild(articles[j]);
+		}
+	}
+}
+
+renderArticles();
+
 function enableBlogSliderOnMob() {
 	const swiperBlock = document.querySelectorAll(".articles_list-swiper");
 	let swiper;
