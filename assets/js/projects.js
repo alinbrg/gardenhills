@@ -4,6 +4,8 @@ function enableSliderOnMob() {
 		slides = document.querySelectorAll(".project_info");
 	let swiper;
 
+	// console.log("projects page");
+
 	checkWidth(window.innerWidth);
 
 	window.addEventListener("resize", function (event) {

@@ -549,8 +549,9 @@ header {
 	border: 1px solid var(--container-border);
 	border-right: none;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	/* align-items: center; */
+	/* justify-content: center; */
+	width: 100%;
 }
 .project_item:nth-child(even) .project_desc {
 	border: none;
@@ -673,6 +674,9 @@ header {
 	bottom: 0;
 	max-width: 114px;
 	width: 10%;
+}
+.project_item:nth-child(even) .side-leaf {
+	display: none;
 }
 .leaf-top {
 	top: -25px;
@@ -964,7 +968,19 @@ header {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
+.blog_section .articles:after {
+	content: "";
+	/* z-index: -1; */
+	position: absolute;
+	width: 150vw;
+	height: 1px;
+	right: -25vw;
+	bottom: 55px;
+	background-color: var(--container-border);
+}
+.blog_section {
+	overflow: hidden;
+}
 @media (max-width: 1024px) {
 	.main_article::before {
 		width: 90vw;
@@ -1022,6 +1038,7 @@ header {
 	.articles:before {
 		top: 0;
 	}
+	.blog_section .articles:after,
 	.articles:after {
 		bottom: 10px;
 	}
@@ -1124,7 +1141,7 @@ header {
 	grid-column-end: 4;
 }
 .projects_listing {
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 16px;
 	height: 100%;
 }
@@ -1153,13 +1170,16 @@ header {
 	font-size: 18px;
 	line-height: 22px;
 	font-family: "lt-55-bold";
+	word-break: break-word;
 	color: white;
 	font-feature-settings: "case" on;
 }
 .project_info-desc p {
 	font-size: 16px;
 	line-height: 24px;
-
+	width: 100%;
+	line-break: anywhere;
+	word-break: break-word;
 	display: -webkit-box;
 	-webkit-line-clamp: 5;
 	-webkit-box-orient: vertical;
@@ -1170,6 +1190,10 @@ header {
 .project_info-img,
 .project_info-desc {
 	padding: 16px;
+}
+project_info-img a,
+project_info-img img {
+	width: 100%;
 }
 .project_info-desc {
 	padding-bottom: 48px;
@@ -1455,7 +1479,10 @@ header {
 	padding: 16px;
 }
 .blog_page-articles .article {
-	/* height: calc(100% / 3); */
+	height: calc(100% / 3 - 10px);
+}
+.articles_list.blog_page-articles {
+	height: 100%;
 }
 .blog_page .articles_list article:last-of-type {
 	margin-bottom: 0;
@@ -1647,7 +1674,7 @@ header {
 }
 .article_page-img {
 	object-fit: cover;
-	height: 492px;
+	max-height: 492px;
 	left: 0;
 	top: calc(var(--header-height) + 10px);
 	width: 100%;
