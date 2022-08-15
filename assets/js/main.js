@@ -29,3 +29,13 @@ function mainPageBlogTexts() {
 }
 
 mainPageBlogTexts();
+
+const loadMainVideo = document.querySelector("#load-main-video");
+const videoDuration = loadMainVideo.querySelector("video").duration;
+const videoDur = (videoDuration * 1000).toFixed();
+
+$(document).ready(function () {
+	setTimeout(() => {
+		loadMainVideo.classList.add("hidden");
+	}, videoDur);
+});

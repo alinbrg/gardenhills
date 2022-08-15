@@ -386,6 +386,22 @@ header {
 	overflow: hidden;
 }
 
+#load-main-video {
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+}
+#load-main-video.hidden {
+	display: none;
+}
+#load-main-video video {
+	height: 100%;
+}
 /* .main_section img {
 	height: 100%;
 	object-fit: cover;
